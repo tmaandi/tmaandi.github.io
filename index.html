@@ -6,6 +6,7 @@
     <title>Tarun Maandi - Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -57,15 +58,31 @@
                 <div class="project-card">
                     <img src="brakecontrolsproject.jpg" alt="Brake Control Project Placeholder">
                     <h3>Automotive Brake Control System Development</h3>
-                    <p>Designed and implemented algorithms for integrated brake control system (<a href="https://www.zf.com/products/en/cars/products_77568.html">IBC</a>), including Feedforward and feedback controller design with Kalman Filter.</p>
-                  <p> <b>Technologies Used:</b> C, Simulink, Stateflow, TargetLink, CANalyzer, AMESim </p>
+                    <p>
+                        Designed, implemented, and validated algorithms for integrated brake control systems (iBS & IBC) for various vehicle platforms across multiple generations, encompassing:
+                         <ul>
+                             <li>Feedforward and feedback controller design for pressure-to-motor request.</li>
+                             <li>Gain scheduling to ensure stability across operating conditions.</li>
+                             <li>Kalman filter implementation for reference interpolation, improving smoothness.</li>
+                             <li>System identification via chirp frequency excitation to estimate robustness margins</li>
+                             <li>ABS valve controllability mapping and calibrations.</li>
+                         </ul>
+                          </p>
+                     <p>Developed algorithms for both production release & for advanced features including ABS, Electronic Stability Control & Adaptive Cruise Control applications.
+                         </p>
+                     <p>
+                       Contributed to Model-in-loop, Software-in-loop, and Hardware-in-loop testing with dSpace & CANape for algorithm verification and calibration.
+                     </p>
+                     <p> <b>Technologies Used:</b> C, Simulink, Stateflow, TargetLink, CANalyzer, CANape, AMESim </p>
                   <p><b>Company:</b> ZF Active Safety</p>
                 </div>
 
                 <!-- Project 2 -->
                 <div class="project-card">
-                    <img src="roboticsproject.jpg" alt="Robotics Project Placeholder">
-                    <img src="roboticsproject2.jpg" alt="Robotics Project Placeholder2">
+                    <div class = "project-images">
+                        <img src="roboticsproject.jpg" alt="Robotics Project Placeholder">
+                        <img src="roboticsproject2.jpg" alt="Robotics Project Placeholder2">
+                  </div>
                     <h3>4-DOF Robotic Arm Design & Control</h3>
                    <p>Designed and 3D printed a 4-DOF robotic arm at home. Implemented forward and inverse kinematics with closed-loop control using Raspberry Pi and I2C. Code <a href="https://github.com/tmaandi/Robotic_Arm">here</a></p>
                     <p><b>Technologies Used:</b> 3D Printing, Raspberry Pi, Python, I2C, PID control </p>
@@ -138,58 +155,57 @@
         <div class="container">
             <h2>Skills</h2>
             <div class="skill-list">
-               <div class="skill-category">
-                 <h3>Programming & Modelling</h3>
-                 <ul>
-                   <li>C/C++</li>
-                   <li>MATLAB/Simulink</li>
-                   <li>Python</li>
-                   <li>Target Link</li>
-                   <li>Embedded Coder</li>
-                 </ul>
-                </div>
                 <div class="skill-category">
-                 <h3>Controls & Embedded Systems</h3>
-                 <ul>
-                   <li>PID Control</li>
-                   <li>Kalman Filters</li>
-                   <li>Model Predictive Control</li>
-                   <li>Embedded Systems</li>
-                   <li>CAN Communication</li>
-                 </ul>
+                  <h3>Programming & Modelling</h3>
+                     <ul>
+                       <li>C/C++</li>
+                       <li>MATLAB/Simulink</li>
+                       <li>Python</li>
+                       <li>Target Link</li>
+                       <li>Embedded Coder</li>
+                    </ul>
+                 </div>
+                 <div class="skill-category">
+                   <h3>Controls & Embedded Systems</h3>
+                      <ul>
+                        <li>PID Control</li>
+                        <li>Kalman Filters</li>
+                        <li>Model Predictive Control</li>
+                        <li>Embedded Systems</li>
+                        <li>CAN Communication</li>
+                       </ul>
+                 </div>
+                 <div class="skill-category">
+                   <h3>Automotive</h3>
+                       <ul>
+                         <li>Brake Controls</li>
+                         <li>System Architecture</li>
+                         <li>Functional Safety</li>
+                         <li>Vehicle Dynamics</li>
+                         <li>Requirement Engineering</li>
+                      </ul>
+                 </div>
+                 <div class="skill-category">
+                   <h3>Robotics & Mechatronics</h3>
+                      <ul>
+                        <li>Robotic Kinematics</li>
+                        <li>Mechatronics Design</li>
+                        <li>Sensor Fusion</li>
+                        <li>Actuator Control</li>
+                       </ul>
+                  </div>
+                 <div class="skill-category">
+                   <h3>Tools</h3>
+                       <ul>
+                         <li>CANalyzer/CANape</li>
+                         <li>DOORS</li>
+                         <li> JAMA </li>
+                         <li>JIRA</li>
+                         <li>Git</li>
+                         <li>dSpace</li>
+                      </ul>
+                </div>
                </div>
-              <div class="skill-category">
-                 <h3>Automotive</h3>
-                 <ul>
-                   <li>Brake Controls</li>
-                   <li>System Architecture</li>
-                   <li>Functional Safety</li>
-                   <li>Vehicle Dynamics</li>
-                    <li>Requirement Engineering</li>
-                 </ul>
-               </div>
-              <div class="skill-category">
-                 <h3>Robotics & Mechatronics</h3>
-                 <ul>
-                   <li>Robotic Kinematics</li>
-                   <li>Mechatronics Design</li>
-                   <li>Sensor Fusion</li>
-                   <li>Actuator Control</li>
-                 </ul>
-               </div>
-               <div class="skill-category">
-                 <h3>Tools</h3>
-                 <ul>
-                   <li>CANalyzer/CANape</li>
-                   <li>DOORS</li>
-                   <li> JAMA </li>
-                   <li>JIRA</li>
-                   <li>Git</li>
-                   <li>dSpace</li>
-                 </ul>
-               </div>
-                <!-- Add more skill categories -->
-            </div>
         </div>
     </section>
 
