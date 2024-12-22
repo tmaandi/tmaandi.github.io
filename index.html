@@ -14,8 +14,19 @@
           <h1>Tarun Maandi, M.S.E.</h1>
             <nav>
                 <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li>
+                       <a href="#">Projects</a>
+                       <ul class="dropdown">
+                         <li><a href="nikola-project.html">Nikola Chassis Controls</a></li>
+                         <li><a href="zf-brake-controls.html">ZF Brake Controls</a></li>
+                         <li><a href="robotic-arm.html">4-DOF Robotic Arm</a></li>
+                         <li><a href="quadrotor-gripper.html">Quadrotor Gripper Design</a></li>
+                         <li><a href="mpc-project.html">Model Predictive Control</a></li>
+                         <li><a href="sensor-fusion.html">Sensor Fusion</a></li>
+                          <li><a href="pmsm-foc.html">PMSM Field Oriented Control</a></li>
+                       </ul>
+                   </li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -56,127 +67,94 @@
             <div class="project-list">
                 <!-- Project 1 -->
                 <div class="project-card">
-                    <img src="nikolaproject.jpg" alt="Nikola Systems Engineering Project Placeholder">
-                    <h3>Nikola Chassis Controls</h3>
-                     <p>
-                         Contributed to the development of Class 8 Battery Electric Vehicles (BEV) and Fuel Cell Electric Vehicles (FCEV) at <a href="https://www.nikolamotor.com/">Nikola</a>, encompassing several key areas:
-                         <ul>
-                             <li>Defined system architecture and software requirements for a greenfield BLE TPMS, Electric Park Brake Interlock and Air E-Compressor.</li>
-                             <li>Developed a modular Simulink framework for Chassis Controls with multi-rate subsystems and a scheduler for a pilot concept.</li>
-                             <li>Led the integration and release of the Crash Management System, and Tire Pressure Monitoring System (TPMS), resolving communication bugs and optimizing RF antenna placement for reliable performance.</li>
-                             <li>Developed and validated system level testing procedures</li>
-                             <li>Introduced a new low-voltage pyrofuse on the truck for High Voltage and Hydrogen post-Crash Safety, driving changes across electrical and mechanical domains, and reducing BOM costs significantly.</li>
-                             <li>Developed safety case documentation for multiple features</li>
-                         </ul>
-                      </p>
-                     <p>
-                      <b>Technologies Used:</b>  JAMA, JIRA, Matlab, Simulink, C, CANalyzer, CAPL, BLE, J1939, ISO26262, 3DX Catia V6
-                    </p>
-                    <p><b>Company:</b> Nikola Corporation</p>
+                    <a href="nikola-project.html">
+                        <div class="image-container">
+                            <img src="nikolaproject.jpg" alt="Nikola Systems Engineering Project Placeholder">
+                        </div>
+                        <h3>Nikola Chassis Controls</h3>
+                        <div class="description-container">
+                          <p>Contributed to the development of Class 8 Battery Electric Vehicles (BEV) and Fuel Cell Electric Vehicles (FCEV) at Nikola.</p>
+                         </div>
+                    </a>
                 </div>
                 <!-- Project 2 -->
                 <div class="project-card">
-                    <img src="brakecontrolsproject.jpg" alt="Brake Control Project Placeholder">
-                    <h3>ZF Brake Controls </h3>
-                    <p>
-                        Designed, implemented, and validated algorithms for integrated brake control systems (<a href="https://www.zf.com/products/en/cars/products_77568.html">IBC</a>) for various vehicle platforms across multiple generations, encompassing:
-                         <ul>
-                             <li>Feedforward and feedback controller design for pressure-to-motor request.</li>
-                             <li>Gain scheduling to ensure stability across operating conditions.</li>
-                             <li>Kalman filter implementation for reference interpolation, improving smoothness.</li>
-                             <li>System identification via chirp frequency excitation to estimate robustness margins</li>
-                             <li>ABS valve controllability mapping and calibrations.</li>
-                         </ul>
-                          </p>
-                     <p>Developed hydraulic actuation & diagnostic algorithms for both production release & for advanced engineering for brake control features including Boosted Service Brakes, ABS, Electronic Stability Control & Adaptive Cruise Control applications.
-                         </p>
-                     <p>
-                       Contributed to Model-in-loop, Software-in-loop, and Hardware-in-loop testing with dSpace & CANape for algorithm verification and calibration.
-                     </p>
-                     <p> <b>Technologies Used:</b> C, Simulink, Stateflow, TargetLink, CANalyzer, CANape, AMESim </p>
-                  <p><b>Company:</b> ZF Active Safety</p>
+                    <a href="zf-brake-controls.html">
+                         <div class="image-container">
+                           <img src="brakecontrolsproject.jpg" alt="Brake Control Project Placeholder">
+                        </div>
+                        <h3>ZF Brake Controls</h3>
+                        <div class="description-container">
+                        <p>Designed, implemented, and validated algorithms for integrated brake control systems for various vehicle platforms.</p>
+                         </div>
+                    </a>
                 </div>
-
+    
                 <!-- Project 3 -->
                 <div class="project-card">
-                    <img src="roboticsproject.jpg" alt="Robotics Project Placeholder">
-                    <h3>4-DOF Robotic Arm</h3>
-                    <p>
-                        Designed, 3D printed, and controlled a 4-DOF robotic arm. This project involved:
-                        <ul>
-                            <li>Utilizing Adafruit servo motors for precise joint control.</li>
-                            <li>Implementing forward and inverse kinematics using Denavit-Hartenberg parameters for accurate positioning.</li>
-                            <li>Developing a PID controller to provide accurate and stable position control, ensuring smooth and responsive movements.</li>
-                            <li>Controlling the arm via a Raspberry Pi, enabling flexibility and extensibility of the control system using I2C communication.</li>
-                        </ul>
-                    </p>
-                    <p>
-                       Code is available <a href="https://github.com/tmaandi/Robotic_Arm">here</a>.
-                    </p>
-                    <p><b>Technologies Used:</b> 3D Printing, Raspberry Pi, Python, I2C, PID control, Adafruit Servo Motors, Denavit-Hartenberg Parameters</p>
-                    <p><b>Project Type:</b> Self Initiated </p>
-    
+                    <a href="robotic-arm.html">
+                         <div class="image-container">
+                           <img src="roboticsproject.jpg" alt="Robotics Project Placeholder">
+                        </div>
+                        <h3>4-DOF Robotic Arm</h3>
+                         <div class="description-container">
+                          <p>Designed, 3D printed, and controlled a 4-DOF robotic arm with forward and inverse kinematics.</p>
+                         </div>
+                    </a>
                 </div>
-
+    
                 <!-- Project 4 -->
                 <div class="project-card">
-                    <img src="quadrotorgripperproject2.jpg" alt="Quadrotor Gripper 2">
-                    <h3>Quadrotor Gripper Design</h3>
-                    <p>
-                        This project involved the design, fabrication, and testing of a motorized gripper for a quadrotor to perch on a rod. The gripper mechanism utilizes a four-bar linkage and a gear ratio to achieve a high mechanical advantage, maximizing gripping force.
-                        More details <a href="https://drive.google.com/file/d/1SUWn8X5k67MpAqV1054-Lu_i05kMC1bV/view">here</a> 
-                    </p>
-                    <p>
-                        Key features include:
-                        <ul>
-                            <li>Two design iterations to improve performance and durability.</li>
-                            <li>3D-printed components using Zortrax printers.</li>
-                            <li>Ribbed rubber lining for enhanced friction.</li>
-                            <li>Bronze bushings to improve gear stability.</li>
-                            <li>Achieved a maximum gripping torque of 3.3 N·m.</li>
-                        </ul>
-                    </p>
-                    <p>
-                        Testing explored different capture configurations, and the results provided valuable insights for further design enhancements. The final gripper design successfully met the project requirements.
-                    </p>
-                     <p>
-                        <b>Technologies Used:</b> 3D Printing, Solidworks, Kinematic Analysis
-                    </p>
-                    <p> <b>Course:</b> University of Michigan</p>
-                </div>   
-
+                    <a href="quadrotor-gripper.html">
+                          <div class="image-container">
+                            <img src="quadrotorgripperproject2.jpg" alt="Quadrotor Gripper 2">
+                           </div>
+                        <h3>Quadrotor Gripper Design</h3>
+                        <div class="description-container">
+                            <p>This project involved the design, fabrication, and testing of a motorized gripper for a quadrotor.</p>
+                         </div>
+                    </a>
+                </div>
+    
                 <!-- Project 5 -->
                 <div class="project-card">
-                    <img src="mpcproject.jpg" alt="Model Predictive Control Placeholder">
-                    <img src="mpcproject2.jpg" alt="Model Predictive Control Placeholder2">
-                    <h3>Model Predictive Control</h3>
-                    <p>Implemented a Model Predictive Controller to calculate steering and throttle inputs for a simulated vehicle to track waypoints closely. Code <a href="https://github.com/tmaandi/Model_Predictive_Control_Project">here</a></p>
-                    <p> <b>Technologies Used:</b> C++, MPC</p>
-                    <p><b>Course:</b> Udacity Self Driving Car Nanodegree</p>
-                    </div>
-
+                    <a href="mpc-project.html">
+                         <div class="image-container">
+                           <img src="mpcproject.jpg" alt="Model Predictive Control Placeholder">
+                          </div>
+                        <h3>Model Predictive Control</h3>
+                         <div class="description-container">
+                         <p>Implemented a Model Predictive Controller to calculate steering and throttle inputs for a simulated vehicle.</p>
+                         </div>
+                    </a>
+                </div>
+    
                 <!-- Project 6 -->
                 <div class="project-card">
-                    <!--<div class="project-images">-->
-                    <!--<img src="placeholder-project3.jpg" alt="Lidar and Radar Fusion Placeholder">-->
-                    <!--</div>-->
-                    <h3>Sensor Fusion</h3>
-                    <p>Developed sensor fusion algorithms (Extended and Unscented Kalman filters) for Lidar and Radar sensors to estimate the state of pedestrians in the vicinity of an autonomous vehicle. Code <a href="https://github.com/tmaandi/Unscented-Kalman-Filter">here</a></p>
-                <p> <b>Technologies Used:</b> C++, Lidar, Radar, Kalman Filters</p>
-                <p> <b>Course:</b> Udacity Self Driving Car Nanodegree</p>
+                    <a href="sensor-fusion.html">
+                        <div class="image-container">
+                           </div>
+                        <h3>Sensor Fusion</h3>
+                         <div class="description-container">
+                            <p>Developed sensor fusion algorithms for Lidar and Radar sensors.</p>
+                          </div>
+                    </a>
                 </div>
-
-                <!-- Project 7 -->                
+    
+                <!-- Project 7 -->
                 <div class="project-card">
-                    <!--<img src="placeholder-project4.jpg" alt="PMSM Control Placeholder">-->
-                    <h3>PMSM Field Oriented Control</h3>
-                    <p>Implemented Field Oriented Control (FOC) for a Permanent Magnet Synchronous Motor (PMSM) using dSpace.</p>
-                <p> <b>Technologies Used:</b> dSpace, PMSM Motor Control, Field Oriented Control (FOC)</p>
-                <p> <b>Course:</b> University of Michigan</p>
+                    <a href="pmsm-foc.html">
+                         <div class="image-container">
+                           </div>
+                        <h3>PMSM Field Oriented Control</h3>
+                         <div class="description-container">
+                            <p>Implemented Field Oriented Control (FOC) for a Permanent Magnet Synchronous Motor (PMSM) using dSpace.</p>
+                          </div>
+                    </a>
                 </div>
-
+    
                 <!-- Add more project cards -->
-
+    
             </div>
         </div>
     </section>

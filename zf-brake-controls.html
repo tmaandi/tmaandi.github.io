@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZF Brake Controls - Tarun Maandi</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+          <h1>Tarun Maandi, M.S.E.</h1>
+            <nav>
+                <ul>
+                  <li><a href="index.html">Home</a></li>
+                    <li>
+                       <a href="#">Projects</a>
+                       <ul class="dropdown">
+                           <li><a href="nikola-project.html">Nikola Chassis Controls</a></li>
+                           <li><a href="zf-brake-controls.html">ZF Brake Controls</a></li>
+                           <li><a href="robotic-arm.html">4-DOF Robotic Arm</a></li>
+                           <li><a href="quadrotor-gripper.html">Quadrotor Gripper Design</a></li>
+                           <li><a href="mpc-project.html">Model Predictive Control</a></li>
+                           <li><a href="sensor-fusion.html">Sensor Fusion</a></li>
+                           <li><a href="pmsm-foc.html">PMSM Field Oriented Control</a></li>
+                       </ul>
+                   </li>
+                    <li><a href="index.html#skills">Skills</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="project-detail">
+        <div class="container">
+            <h2>ZF Brake Controls</h2>
+            <img src="brakecontrolsproject.jpg" alt="Brake Control Project Placeholder" style="max-width: 400px; display: block; margin: 20px auto;">
+            <p>
+                Designed, implemented, and validated algorithms for integrated brake control systems (<a href="https://www.zf.com/products/en/cars/products_77568.html">IBC</a>) for various vehicle platforms across multiple generations, encompassing:
+                 <ul>
+                     <li>Feedforward and feedback controller design for pressure-to-motor request.</li>
+                     <li>Gain scheduling to ensure stability across operating conditions.</li>
+                     <li>Kalman filter implementation for reference interpolation, improving smoothness.</li>
+                     <li>System identification via chirp frequency excitation to estimate robustness margins</li>
+                     <li>ABS valve controllability mapping and calibrations.</li>
+                 </ul>
+             </p>
+             <p>Developed hydraulic actuation & diagnostic algorithms for both production release & for advanced engineering for brake control features including Boosted Service Brakes, ABS, Electronic Stability Control & Adaptive Cruise Control applications.
+                 </p>
+            <p>
+              Contributed to Model-in-loop, Software-in-loop, and Hardware-in-loop testing with dSpace & CANape for algorithm verification and calibration.
+            </p>
+             <p> <b>Technologies Used:</b> C, Simulink, Stateflow, TargetLink, CANalyzer, CANape, AMESim </p>
+                  <p><b>Company:</b> ZF Active Safety</p>
+                <a href="index.html#projects" class="button" style="margin-top: 20px; display: inline-block;">Back to Projects</a>
+        </div>
+    </section>
+
+    <footer>
+      <p>© 2024 Tarun Maandi. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
