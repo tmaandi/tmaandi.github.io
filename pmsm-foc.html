@@ -18,13 +18,13 @@
                     <li>
                        <a href="#">Projects</a>
                        <ul class="dropdown">
+                         <li><a href="pmsm-foc.html">PMSM Field Oriented Control</a></li>
                          <li><a href="nikola-project.html">Nikola Chassis Controls</a></li>
                          <li><a href="zf-brake-controls.html">ZF Brake Controls</a></li>
                          <li><a href="robotic-arm.html">4-DOF Robotic Arm</a></li>
                          <li><a href="quadrotor-gripper.html">Quadrotor Gripper Design</a></li>
                          <li><a href="mpc-project.html">Model Predictive Control</a></li>
                          <li><a href="sensor-fusion.html">Sensor Fusion</a></li>
-                          <li><a href="pmsm-foc.html">PMSM Field Oriented Control</a></li>
                        </ul>
                    </li>
                     <li><a href="index.html#skills">Skills</a></li>
@@ -37,9 +37,39 @@
     <section class="project-detail">
         <div class="container">
             <h2>PMSM Field Oriented Control</h2>
-            <p>Implemented Field Oriented Control (FOC) for a Permanent Magnet Synchronous Motor (PMSM) using dSpace.</p>
-           <p> <b>Technologies Used:</b> dSpace, PMSM Motor Control, Field Oriented Control (FOC)</p>
-            <p> <b>Course:</b> University of Michigan</p>
+            <p style="text-align: left">Currently implementing Field Oriented Control (FOC) for a Permanent Magnet Synchronous Motor (PMSM) using the TI C2000 LaunchPad (F28379D) along with a 3-phase GaN inverter (BOOSTXL-3PhGaNInv). This project utilizes:</p>
+            <ul style="text-align: left;">
+                <li>TI's Fast Current Loop (FCL) library to enhance current loop bandwidth and overall control performance.</li>
+                <li>Software Frequency Response Analyzer (SFRA) library for detailed system analysis.</li>
+            </ul>
+            <p style="text-align: left"><b>Key Features and Progress:</b></p>
+            <ul style="text-align: left;">
+                <li>Successful initialization and verification of PWM signal generation.</li>
+                <li>Implementation of space vector modulation (SVM) to drive the 3-phase inverter.</li>
+                <li>Accurate DC bus voltage measurement calibration, ensuring proper scaling and ADC readings.</li>
+                <li>Currently in the initial build levels, focusing on system initialization, PWM verification, and DC bus voltage calibration.</li>
+            </ul>
+            <p style="text-align: left"><b>Hardware Used:</b></p>
+            <ul style="text-align: left;">
+                <li>TI LaunchPad Development Kit (LAUNCHXL-F28379D)</li>
+                <li>3-phase GaN inverter (BOOSTXL-3PhGaNInv)</li>
+                <li>Teknic Motor M-2310P-LN-04K</li>
+                <li>48V DC Power Supply</li>
+            </ul>
+            <img src="setupFOC.jpg" alt="Project Setup" style="width: 100%; max-width: 600px; margin-bottom: 20px;">
+            <p style="text-align: left">Overview of the hardware setup, including the TI LaunchPad, 3-phase GaN inverter, and power supply.</p>
+            <img src="pwm_waveforms.jpg" alt="PWM Waveforms" style="width: 100%; max-width: 600px; margin-bottom: 20px;">
+            <p style="text-align: left">Oscilloscope captures of the PWM signals (for Motor Phase A & Phase B), demonstrating the correct generation of PWM waveforms.</p>
+            <img src="pwm_dac_waveforms.jpg" alt="PWM DAC Waveforms" style="width: 100%; max-width: 600px; margin-bottom: 20px;">
+            <p style="text-align: left">Oscilloscope captures of the equivalent DAC signals resulting from the PWM signals shown above (for Motor Phase A & Phase B - note the expected 120-degree phase difference between each phase).</p>
+            <p style="text-align: left"><b>Next Steps:</b></p>
+            <ul style="text-align: left;">
+                <li>Proceed to open-loop motor control and QEP feedback verification.</li>
+                <li>Implement and tune the current and speed control loops.</li>
+                <li>Conduct frequency response analysis using the SFRA tool to optimize system performance.</li>
+            </ul>
+            <p style="text-align: left"><b>Technologies Used:</b> TI C2000 LaunchPad, 3-phase GaN inverter, FOC, FCL Library, SFRA Library, PWM, Motor Control</p>
+            <p style="text-align: left"><b>Project Type:</b> Personal Project (Building upon knowledge from University of Michigan EECS 419)</p>
             <a href="index.html#projects" class="button" style="margin-top: 20px; display: inline-block;">Back to Projects</a>
         </div>
     </section>
