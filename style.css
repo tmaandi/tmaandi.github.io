@@ -447,3 +447,22 @@ a {
 .project-detail .button:hover {
     background-color: #0056b3;
 }
+
+.build-levels {
+  margin-top: 20px;
+}
+
+.build-level {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.build-level h3 {
+  margin-top: 0;
+}
+
+.build-level img {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

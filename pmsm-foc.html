@@ -46,18 +46,12 @@
     <section class="project-detail">
         <div class="container">
             <h2>PMSM Field Oriented Control</h2>
-            <p style="text-align: left">Currently implementing Field Oriented Control (FOC) for a Permanent Magnet Synchronous Motor (PMSM) using the TI C2000 LaunchPad (F28379D) along with a 3-phase GaN inverter (BOOSTXL-3PhGaNInv). This project utilizes:</p>
+            <p style="text-align: left">Implementing Field Oriented Control (FOC) for a Permanent Magnet Synchronous Motor (PMSM) using the TI C2000 LaunchPad (F28379D) along with a 3-phase GaN inverter (BOOSTXL-3PhGaNInv). This project utilizes:</p>
             <ul style="text-align: left;">
                 <li>TI's Fast Current Loop (FCL) library to enhance current loop bandwidth and overall control performance.</li>
                 <li>Software Frequency Response Analyzer (SFRA) library for detailed system analysis.</li>
             </ul>
-            <p style="text-align: left"><b>Key Features and Progress:</b></p>
-            <ul style="text-align: left;">
-                <li>Successful initialization and verification of PWM signal generation.</li>
-                <li>Implementation of space vector modulation (SVM) to drive the 3-phase inverter.</li>
-                <li>Accurate DC bus voltage measurement calibration, ensuring proper scaling and ADC readings.</li>
-                <li>Currently in the initial build levels, focusing on system initialization, PWM verification, and DC bus voltage calibration.</li>
-            </ul>
+
             <p style="text-align: left"><b>Hardware Used:</b></p>
             <ul style="text-align: left;">
                 <li>TI LaunchPad Development Kit (LAUNCHXL-F28379D)</li>
@@ -65,21 +59,112 @@
                 <li>Teknic Motor M-2310P-LN-04K</li>
                 <li>48V DC Power Supply</li>
             </ul>
+
+            <p style="text-align: left"><b>Technologies Used:</b> FOC, FCL Library, SFRA Library, PWM, Motor Control</p>
+            <p style="text-align: left"><b>Project Type:</b> Personal Project (Building upon knowledge from University of Michigan EECS 419)</p>
+
             <img src="setupFOC.jpg" alt="Project Setup" style="width: 100%; max-width: 600px; margin-bottom: 20px;">
             <img src="setupFOC2.jpg" alt="Project Setup 2" style="width: 100%; max-width: 600px; margin-bottom: 20px;">
-            <p style="text-align: left">Overview of the hardware setup, including the TI LaunchPad, 3-phase GaN inverter, and power supply.</p>
-            <img src="pwm_waveforms.jpg" alt="PWM Waveforms" style="width: 100%; max-width: 600px; margin-bottom: 20px;">
-            <p style="text-align: left">Oscilloscope captures of the PWM signals (EPWM1A & B - High and Low switches (Gallium Nitride (GaN) Field Effect Transistors (FETs)) for Motor Phase A - note their complementary nature), demonstrating the correct generation of PWM waveforms.</p>
-            <img src="pwm_dac_waveforms.jpg" alt="PWM DAC Waveforms" style="width: 100%; max-width: 600px; margin-bottom: 20px;">
-            <p style="text-align: left">Oscilloscope captures of the equivalent DAC signals resulting from the PWM signals shown above (for Motor Phase A & Phase B - note the expected 120-degree phase difference between each phase).</p>
+            <p style="text-align: left">Overview of the hardware setup, including the TI LaunchPad, 3-phase GaN inverter, Two Teknic Motors and power supply.</p>
+
+            </ul>
+
+            <p style="text-align: left"><b>Key Features and Progress:</b></p>
+            <p style="text-align: left">Successfully completed all 6 incremental build levels as outlined by the Texas Instruments application report, "Dual-Axis Motor Control Using FCL and SFRA On a Single C2000™ MCU".</p>
+
+            <div class="build-levels">
+                <div class="build-level">
+                    <h3>Build Level 1: Basic PWM Generation</h3>
+                    <ul style="text-align: left">
+                        <li>Initialized and verified PWM signal generation.</li>
+                        <li>Implemented space vector modulation (SVM) to drive the 3-phase inverter.</li>
+                    </ul>
+                    <img src="pwm_waveforms.jpg" alt="Build Level 1" style="width: 100%; max-width: 600px; margin-bottom: 20px;">
+                    <p style="text-align: left">Oscilloscope captures of the PWM signals (EPWM1A & B - High and Low switches (Gallium Nitride (GaN) Field Effect Transistors (FETs)) for Motor Phase A - note their complementary nature), demonstrating the correct generation of PWM waveforms.</p>
+                </div>
+
+                <div class="build-level">
+                    <h3>Build Level 2: Open Loop Motor Control</h3>
+                    <ul style="text-align: left">
+                        <li>Achieved open-loop control of the motor.</li>
+                        <li>Calibrated DC bus voltage measurement for accurate scaling and ADC readings.</li>
+                        <li>Verified QEP interface for encoder feedback.</li>
+                    </ul>
+                    <img src="build_level2_sys.jpg" alt="Level 2 System" style="width: 100%; max-width: 600px; margin-bottom: 20px;">
+                    <p style="text-align: left">System diagram for Build Level 2, illustrating the connections between the C2000 LaunchPad, GaN inverter, and Teknic Motor <I>(Img Ref: TI Dual-Axis Motor Control using FCL)</I>.</p>
+                    <img src="pwm_dac_waveforms.jpg" alt="PWM DAC Waveforms" style="width: 100%; max-width: 600px; margin-bottom: 20px;">
+                    <p style="text-align: left">Oscilloscope captures of the scaled-down phase voltages resulting from the PWM signals shown above (for Motor Phase A & Phase B - note the expected 120-degree phase difference between each phase).</p>        
+                    <img src="build_level2_plots.jpg" alt="Level 2 System" style="width: 100%; max-width: 600px; margin-bottom: 20px;">
+                    <p style="text-align: left">Plots of the motor electrical position and current during open-loop control as captured via debugger. Because of open loop control, the rotor position and reference
+                        position do not align, only the speeds match since reference theta is used to determine field's rotational frequency</p>
+                </div>
+
+                <div class="build-level">
+                    <h3>Build Level 3: Current Control Loop</h3>
+                    <ul style="text-align: left">
+                        <li>Implemented the current control loop using the FCL library.</li>
+                        <li>Performed latency measurements between ADC and QEP sampling and PWM updates.</li>
+                        <li>Chose a PI controller for current regulation.</li>
+                    </ul>
+                    <img src="build_level3_sys.jpg" alt="Build Level 3" style="width: 100%; max-width: 600px; margin-bottom: 20px;">
+                    <p style="text-align: center">System diagram for Build Level 3 <I>(Img Ref: TI Dual-Axis Motor Control using FCL)</I>. </p>
+                    <img src="build_level3_plots.jpg" alt="Build Level 3" style="width: 100%; max-width: 600px; margin-bottom: 20px;">
+                    <p style="text-align: left">Plots of the motor electrical position and q-axis current during current control loop as captured via debugger. The current loop is closed and the current is regulated to the reference value.</p>
+                </div>
+
+                <div class="build-level">
+                    <h3>Build Level 4: Speed Control Loop</h3>
+                    <ul style="text-align: left">
+                        <li>Implemented the speed control loop.</li>
+                        <li>Conducted tests at different speed settings.</li>
+                    </ul>
+                    <img src="build_level4_sys.jpg" alt="Build Level 4" style="width: 100%; max-width: 600px; margin-bottom: 20px;">
+                    <p style="text-align: center">System diagram for Build Level 4 <I>(Img Ref: TI Dual-Axis Motor Control using FCL)</I>.</p>
+                    <img src="build_level4_plots.jpg" alt="Build Level 4" style="width: 100%; max-width: 600px; margin-bottom: 20px;">
+                    <p style="text-align: left">Plots of the dual, independent motor electrical position and speed during speed control loop as captured via debugger. The speed loop is closed and the speed is regulated to the reference value.</p>
+                    <img src="build_level4_dual_motor.gif" alt="Build Level 4 Motors" style="width: 100%; max-width: 600px; margin-bottom: 20px;">
+                    <p style="text-align: left">The two de-coupled motors running at same speeds, demonstrating the independent control of each motor.</p>
+                </div>
+
+                <div class="build-level">
+                    <h3>Build Level 5: Position Control Loop</h3>
+                    <ul style="text-align: left">
+                        <li>Implemented the position control loop.</li>
+                        <li>Ran the motor through predefined motion profiles.</li>
+                    </ul>
+                    <img src="build_level5_sys.jpg" alt="Build Level 5" style="width: 100%; max-width: 600px; margin-bottom: 20px;">
+                    <p style="text-align: center">System diagram for Build Level 5 <I>(Img Ref: TI Dual-Axis Motor Control using FCL)</I>.</p>
+                    <img src="build_level5_plots.jpg" alt="Build Level 5" style="width: 100%; max-width: 600px; margin-bottom: 20px;">
+                    <p style="text-align: left">Plots of the motor electrical position and speed during position control loop as captured via debugger. The position loop is closed and the position is regulated to the reference value.</p>
+                    <img src="build_level5_pos_control.gif" alt="Build Level 5 Motion Profile" style="width: 100%; max-width: 600px; margin-bottom: 20px;">
+                    <p style="text-align: left">The motor running through a predefined motion profile, demonstrating the position control loop.</p>
+                </div>
+
+                <div class="build-level">
+                    <h3>Build Level 6: Frequency Response Analysis</h3>
+                    <ul style="text-align: left">
+                        <li>Utilized the SFRA tool to perform frequency response analysis of the current loops.</li>
+                        <li>Analyzed system performance at various bandwidth settings and under different load conditions.</li>
+                        <li>Compared open-loop, closed-loop, and plant models using the SFRA GUI.</li>
+                    </ul>
+                    <img src="build_level6_sys.jpg" alt="Build Level 6" style="width: 100%; max-width: 600px; margin-bottom: 20px;">
+                    <p style="text-align: center">System diagram for Build Level 6 <I>(Img Ref: TI Dual-Axis Motor Control using FCL)</I>.</p>
+                    <img src="sfra_d_axis_OL.jpg" alt="Build Level 6" style="width: 100%; max-width: 600px; margin-bottom: 20px;">
+                    <p style="text-align: left">Frequency response analysis of the d-axis current loop in open-loop control, showing the Bode plot of the current loop.</p>
+                    <img src="sfra_d_axis_CL.jpg" alt="Build Level 6" style="width: 100%; max-width: 600px; margin-bottom: 20px;">
+                    <p style="text-align: left">Frequency response analysis of the d-axis current loop in closed-loop control, showing the Bode plot of the current loop.</p>
+                    <img src="sfra_q_axis_OL.jpg" alt="Build Level 6" style="width: 100%; max-width: 600px; margin-bottom: 20px;">
+                    <p style="text-align: left">Frequency response analysis of the q-axis current loop in open-loop control, showing the Bode plot of the current loop.</p>
+                    <img src="sfra_q_axis_CL.jpg" alt="Build Level 6" style="width: 100%; max-width: 600px; margin-bottom: 20px;">
+                    <p style="text-align: left">Frequency response analysis of the q-axis current loop in closed-loop control, showing the Bode plot of the current loop.</p>
+                </div>
+            </div>
+
             <p style="text-align: left"><b>Next Steps:</b></p>
             <ul style="text-align: left;">
-                <li>Proceed to open-loop motor control and QEP feedback verification.</li>
-                <li>Implement and tune the current and speed control loops.</li>
-                <li>Conduct frequency response analysis using the SFRA tool to optimize system performance.</li>
-            </ul>
-            <p style="text-align: left"><b>Technologies Used:</b> TI C2000 LaunchPad, 3-phase GaN inverter, FOC, FCL Library, SFRA Library, PWM, Motor Control</p>
-            <p style="text-align: left"><b>Project Type:</b> Personal Project (Building upon knowledge from University of Michigan EECS 419)</p>
+                <li>Further explore multi-axis control using a single C2000 MCU.</li>
+                <li>Analyze speed loop via open and close loop bode plots</li>
+                <li>Optimize control parameters for enhanced performance and efficiency.</li>
             <a href="index.html#projects" class="button" style="margin-top: 20px; display: inline-block;">Back to Projects</a>
         </div>
     </section>
